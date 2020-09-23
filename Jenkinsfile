@@ -9,7 +9,7 @@ pipeline {
          }   
         stage('Build') {
                 steps {
-                    sh 'docker build -t nazmy123/django_app:v1.0'
+                    sh 'docker build -f Dockerfile . -t nazmy123/django_app:v1.0'
                       }
                    
             }
