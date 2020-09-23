@@ -15,6 +15,10 @@ pipeline {
             }
         stage('Push') {
             steps {
+                docker-machine ssh default
+sudo vi /etc/resolv.conf
+//change nameserver to 8.8.8.8
+service docker restart
                 withCredentials([usernamePassword(credentialsId:"docker",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
                 sh 'docker login --username $USERNAME --password $PASSWORD'
                 sh 'docker push nazmy123/django_app:v1.0'
