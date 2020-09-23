@@ -23,7 +23,7 @@ pipeline {
         }
          stage('Deploy') {
             steps {
-                sh 'docker run -d -p 3000:3000 nazmy123/django_app:v1.0'
+                sh 'docker run -d -p 8000:8000 nazmy123/django_app:v1.0'
             }  
     }
   }
